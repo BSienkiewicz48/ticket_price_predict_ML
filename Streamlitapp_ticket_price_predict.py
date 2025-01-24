@@ -13,7 +13,7 @@ destination_airport_mapping = {'BOS': 0, 'CLT': 1, 'DEN': 2, 'DFW': 3, 'DTW': 4,
 airline_name_mapping = {'Delta': 0, 'JetBlue Airways': 1, 'American Airlines': 2, 'Frontier Airlines': 3, 'United': 4, 'Spirit Airlines': 5, 'Alaska Airlines': 6}
 
 # Tytuł aplikacji
-st.title('Prognoza Ceny Biletu Lotniczego 🌈')
+st.title('Prognoza Ceny Biletu 🌈')
 
 # Wybór lotniska początkowego
 starting_airport = st.selectbox('Lotnisko Początkowe 💖', list(starting_airport_mapping.keys()))
