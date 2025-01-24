@@ -13,28 +13,28 @@ destination_airport_mapping = {'BOS': 0, 'CLT': 1, 'DEN': 2, 'DFW': 3, 'DTW': 4,
 airline_name_mapping = {'Delta': 0, 'JetBlue Airways': 1, 'American Airlines': 2, 'Frontier Airlines': 3, 'United': 4, 'Spirit Airlines': 5, 'Alaska Airlines': 6}
 
 # Tytuł aplikacji
-st.title('Flight Fare Prediction')
+st.title('Prognoza Ceny Biletu Lotniczego')
 
 # Wybór lotniska początkowego
-starting_airport = st.selectbox('Starting Airport', list(starting_airport_mapping.keys()))
+starting_airport = st.selectbox('Lotnisko Początkowe', list(starting_airport_mapping.keys()))
 starting_airport_code = starting_airport_mapping[starting_airport]
 
 # Wybór lotniska docelowego
-destination_airport = st.selectbox('Destination Airport', list(destination_airport_mapping.keys()))
+destination_airport = st.selectbox('Lotnisko Docelowe', list(destination_airport_mapping.keys()))
 destination_airport_code = destination_airport_mapping[destination_airport]
 
 # Wybór linii lotniczej
-airline = st.selectbox('Airline', list(airline_name_mapping.keys()))
+airline = st.selectbox('Linia Lotnicza', list(airline_name_mapping.keys()))
 airline_code = airline_name_mapping[airline]
 
 # Wybór liczby dni do lotu
-days_between_search_and_flight = st.slider('Days Between Search and Flight', min_value=1, max_value=18, value=10)
+days_between_search_and_flight = st.slider('Liczba Dni do Lotu', min_value=1, max_value=18, value=10)
 
 # Wybór klasy ekonomicznej
-is_basic_economy = st.checkbox('Is Basic Economy', value=False)
+is_basic_economy = st.checkbox('Klasa Ekonomiczna', value=False)
 
 # Przycisk do wyszukiwania
-if st.button('Search'):
+if st.button('Szukaj'):
     # Przygotowanie danych wejściowych
     input_data = {
         'startingAirport': [starting_airport_code],
@@ -47,4 +47,4 @@ if st.button('Search'):
 
     # Predykcja ceny
     predicted_fare = model_xgboost.predict(input_df)
-    st.write(f'Predicted Fare: ${predicted_fare[0]:.2f}')
+    st.markdown(f"<h2 style='text-align: center;'>Przewidywana Cena: ${predicted_fare[0]:.2f}</h2>", unsafe_allow_html=True)
