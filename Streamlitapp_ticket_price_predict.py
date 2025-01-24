@@ -47,8 +47,8 @@ if st.button('Szukaj'):
 
     # Predykcja ceny
     predicted_fare = model_xgboost.predict(input_df)
-    lower_bound = predicted_fare[0] * 0.8
-    upper_bound = predicted_fare[0] * 1.2
+    lower_bound = round(predicted_fare[0] * 0.8)
+    upper_bound = round(predicted_fare[0] * 1.2)
     
     # Wyświetlanie przewidywanego zakresu cen
     st.markdown(f"<div style='text-align: center; font-size: 24px;'>Przewidywany Zakres Cen dla Wyszukiwanego Połączenia:</div>", unsafe_allow_html=True)
