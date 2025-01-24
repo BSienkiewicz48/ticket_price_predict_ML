@@ -47,4 +47,7 @@ if st.button('Szukaj'):
 
     # Predykcja ceny
     predicted_fare = model_xgboost.predict(input_df)
-    st.write(f'Przewidywana Cena: ${predicted_fare[0]:.2f}')
+    
+    # Wyświetlanie przewidywanej ceny
+    st.markdown(f"<div style='text-align: center; font-size: 14px;'>Przewidywana Cena:</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='text-align: center; font-size: 24px; font-weight: bold;'>${predicted_fare[0]:.2f}</div>", unsafe_allow_html=True)
