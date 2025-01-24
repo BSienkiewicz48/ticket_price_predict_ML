@@ -16,7 +16,7 @@ airline_name_mapping = {'Delta': 0, 'JetBlue Airways': 1, 'American Airlines': 2
 st.title('Prognoza Ceny Biletu 🌈')
 
 # Wybór lotniska początkowego
-starting_airport = st.selectbox('Lotnisko Początkowe ❤', list(starting_airport_mapping.keys()))
+starting_airport = st.selectbox('Lotnisko Początkowe 💖', list(starting_airport_mapping.keys()))
 starting_airport_code = starting_airport_mapping[starting_airport]
 
 # Wybór lotniska docelowego
