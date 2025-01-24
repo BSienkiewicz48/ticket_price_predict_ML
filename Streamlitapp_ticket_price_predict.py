@@ -50,6 +50,6 @@ if st.button('Szukaj'):
     lower_bound = round(predicted_fare[0] * 0.8)
     upper_bound = round(predicted_fare[0] * 1.2)
     
-    # Wyświetlanie przewidywanego zakresu cen
+    # Wyświetlanie przewidywanego zakresu cen bez miejsc po przecinku
     st.markdown(f"<div style='text-align: center; font-size: 24px;'>Przewidywany Zakres Cen dla Wyszukiwanego Połączenia:</div>", unsafe_allow_html=True)
-    st.markdown(f"<div style='text-align: center; font-size: 36px; font-weight: bold;'>${lower_bound:.2f} - ${upper_bound:.2f}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='text-align: center; font-size: 36px; font-weight: bold;'>${lower_bound} - ${upper_bound}</div>", unsafe_allow_html=True)
